@@ -19,7 +19,7 @@ jobs:
           go-version: "1.26.0"
 
       - name: Force Failure
-        run: run test ./...
+        run: test ./...
 
       - name: exit 0
         run: (exit 0)
