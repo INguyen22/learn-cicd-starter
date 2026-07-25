@@ -23,3 +23,20 @@ jobs:
 
       - name: exit 0
         run: (exit 0)
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.26.0"
+
+      - name: Style
+        uses: test -z $(go fmt ./...)
