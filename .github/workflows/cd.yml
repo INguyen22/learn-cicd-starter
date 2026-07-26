@@ -1,11 +1,11 @@
-name: ci
+name: cd
 
 on:
   push:
     branches: [main]
 
 jobs:
-  Deploy:
+  deploy:
     name: deploy
     runs-on: ubuntu-latest
 
