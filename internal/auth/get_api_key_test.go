@@ -37,7 +37,7 @@ func TestGetAPIKey_Malformed(t *testing.T) {
 		{"No Space", "ApiKey"},
 		{"Empty String", ""}, // This actually triggers ErrNoAuthHeaderIncluded, but still an error path
 		{"Only Space", " "},
-		// "Multiple Spaces" removed because "ApiKey token extra" is technically valid
+		// "Multiple Spaces" removed because "ApiKey token extra" is technically valid 
 		// with your current logic (returns "token").
 	}
 
@@ -53,7 +53,7 @@ func TestGetAPIKey_Malformed(t *testing.T) {
 				t.Errorf("expected error for case '%s', got nil", tc.name)
 				return // Stop here to avoid panic on nil err
 			}
-
+			
 			// Specific check for Empty String vs Malformed
 			if tc.value == "" {
 				if err != ErrNoAuthHeaderIncluded {
@@ -66,4 +66,4 @@ func TestGetAPIKey_Malformed(t *testing.T) {
 			}
 		})
 	}
-}
+}   
